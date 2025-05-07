@@ -10,7 +10,7 @@ app = FastAPI()
 # Database connection
 def get_db_connection():
     return psycopg2.connect(
-        dbname="stocknews",
+        dbname="vynotra",  # Updated from "stocknews" to match the new project name
         user="postgres",
         password="Hockeystar44!",  # Your PostgreSQL password
         host="localhost",
@@ -22,7 +22,7 @@ sentiment_analyzer = pipeline("sentiment-analysis", model="distilbert-base-uncas
 
 @app.get("/")
 def read_root():
-    return {"message": "Stock News App API"}
+    return {"message": "Vynotra FI API - Global Financial Intelligence"}
 
 @app.get("/test-db")
 def test_db():
@@ -96,4 +96,3 @@ def get_news(ticker: str):
         }
     except Error as e:
         raise HTTPException(status_code=500, detail=str(e))
-    
