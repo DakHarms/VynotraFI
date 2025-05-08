@@ -8,3 +8,6 @@
 ## Business Registration (May 2025)
 - **Incorporation**: Completed on May 7, 2025. Ontario Corporation Number (OCN): 1001229609, Company Key: 477167006.
 - **Banking**: Set up RBC Business Essentials account on May 7, 2025, account number [insert account number], transit number [insert transit number], applied for $300 refund.
+## Branding (May 2025)
+...
+- **Emails**: Setup of info@vynotrafi.com and support@vynotrafi.com deferred to app deployment due to additional cost of $110 per email user (Squarespace/Google Workspace), which exceeds current budget. Will revisit in Phase 3 (Nov 2025).
