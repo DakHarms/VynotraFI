@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 import psycopg2
 from psycopg2 import Error
 from transformers import pipeline
@@ -7,12 +8,21 @@ from datetime import datetime
 
 app = FastAPI()
 
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 # Database connection
 def get_db_connection():
     return psycopg2.connect(
-        dbname="vynotra",  # Updated from "stocknews" to match the new project name
+        dbname="vynotra",
         user="postgres",
-        password="Hockeystar44!",  # Your PostgreSQL password
+        password="Hockeystar44!",
         host="localhost",
         port="5432"
     )
@@ -58,7 +68,7 @@ def fetch_news(ticker: str):
 
             cursor.execute(
                 """
-                INSERT INTO news (title, content, published_date, source, ticker, sentiment_score)
+                INSERT INTO news_articles (title, content, published_date, source, ticker, sentiment_score)
                 VALUES (%s, %s, %s, %s, %s, %s) RETURNING id;
                 """,
                 (title, content, published_date, source, ticker.upper(), sentiment_score)
@@ -77,7 +87,7 @@ def get_news(ticker: str):
         conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute(
-            "SELECT title, content, published_date, source, sentiment_score FROM news WHERE ticker = %s ORDER BY published_date DESC LIMIT 5;",
+            "SELECT title, content, published_date, source, sentiment_score FROM news_articles WHERE ticker = %s ORDER BY published_date DESC LIMIT 5;",
             (ticker.upper(),)
         )
         news = cursor.fetchall()

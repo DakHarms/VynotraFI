@@ -1,38 +1,121 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #1a73e8;
   color: white;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.App-header h1 {
+  margin: 0;
+  font-size: 2em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-header p {
+  margin: 5px 0;
+  font-size: 1.2em;
+}
+
+main {
+  padding: 20px;
+}
+
+.ticker-form {
+  margin-bottom: 20px;
+}
+
+.ticker-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.ticker-form input {
+  padding: 10px;
+  font-size: 1em;
+  width: 200px;
+  margin-right: 10px;
+}
+
+.ticker-form button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.ticker-form button:hover {
+  background-color: #1557b0;
+}
+
+.error {
+  color: red;
+  margin-bottom: 20px;
+}
+
+.news-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.news-article {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.news-article h3 {
+  margin: 0 0 10px;
+  font-size: 1.2em;
+}
+
+.news-article .article-meta {
+  color: #555;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.news-article p {
+  margin: 5px 0;
+}
+
+.news-article .sentiment {
+  font-weight: bold;
+  color: #1a73e8;
+}
+
+footer {
+  background-color: #1a73e8;
+  color: white;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+footer a {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }

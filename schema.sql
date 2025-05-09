@@ -1,10 +1,9 @@
-CREATE TABLE news (
+CREATE TABLE news_articles (
     id SERIAL PRIMARY KEY,
-    title VARCHAR(255),
-    content TEXT,
-    published_date TIMESTAMP,
-    source VARCHAR(100),
-    ticker VARCHAR(10),
-    sentiment_score FLOAT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    title TEXT NOT NULL,
+    content TEXT NOT NULL,
+    published_date TIMESTAMP NOT NULL,
+    source TEXT NOT NULL,
+    ticker TEXT NOT NULL,
+    sentiment_score FLOAT
 );
